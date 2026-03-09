@@ -1,0 +1,10 @@
+<div class="grid-wrapper">
+  <app-thiings-grid [gridSize]="gridSize" [itemTemplate]="cellTemplate"> </app-thiings-grid>
+</div>
+
+<ng-template #cellTemplate let-item>
+  @let abekeItem = abekePictures[item.gridIndex % abekePictures.length];
+  <div class="cell" (click)="onCellClick(item, abekeItem)">
+    <img [src]="'assets/abeke/' + abekeItem" alt="" />
+  </div>
+</ng-template>
